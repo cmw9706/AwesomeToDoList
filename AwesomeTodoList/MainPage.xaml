@@ -6,7 +6,7 @@
              xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient">
 
 
-        <gradient:GradientHelper StartColor="Green" EndColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <gradient:GradientHelper StartColor="#A30D00" EndColor="#F9A03F" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />    
         </gradient:GradientHelper>
 
