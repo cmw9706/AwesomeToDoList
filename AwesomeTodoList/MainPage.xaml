@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:AwesomeTodoList" 
+             x:Class="AwesomeTodoList.MainPage"
+             xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient">
+
+
+        <gradient:GradientHelper StartColor="Green" EndColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />    
+        </gradient:GradientHelper>
+
+</ContentPage>
