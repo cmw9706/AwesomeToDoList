@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AwesomeTodoList.Resources.FontResources">
+    <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+        <On Platform="Android" Value="OpenSans-Bold.ttf#Saira Condensed" />
+        <On Platform="iOS" Value="OpenSans-Bold" />
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+        <On Platform="Android" Value="SairaCondensed-Light.ttf#Saira Condensed" />
+        <On Platform="iOS" Value="SairaCondensed-Light" />
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="HeaderFont">
+        <On Platform="Android" Value="FjallaOne-Regular.ttf#Fjalla One" />
+        <On Platform="iOS" Value="FjallaOne-Regular" />
+    </OnPlatform>
+        
+</ResourceDictionary>

@@ -3,11 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:AwesomeTodoList" 
              x:Class="AwesomeTodoList.MainPage"
-             xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient">
-
-
-        <gradient:GradientHelper StartColor="#A30D00" EndColor="#F9A03F" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />    
-        </gradient:GradientHelper>
-
+             xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient"
+             xmlns:components="clr-namespace:AwesomeTodoList.Components"
+             xmlns:resources="clr-namespace:AwesomeTodoList.Resources">
+    <ContentPage.Resources>
+        <resources:FontResources />
+    </ContentPage.Resources>
+    <gradient:GradientHelper StartColor="#A30D00" 
+                             EndColor="#F9A03F" 
+                             HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="FillAndExpand"
+                             x:Name="gradientBackground">
+        <StackLayout BackgroundColor="Transparent" Margin="0,25,0,25">
+            <components:LineSpacingLabel Text="TODO:"
+                   Margin="42,46,42,46"
+                   FontSize="32"
+                   TextColor="#FFFFFF" 
+                   LetterSpacing="2" FontFamily="{StaticResource HeaderFont}"/>
+            <ListView ItemsSource="{Binding TodoItems}" 
+                      BackgroundColor="Transparent"
+                      SeparatorVisibility="None" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" 
+                                         Margin="42,20,42,20"
+                                         HorizontalOptions="StartAndExpand">
+                                <Image />
+                                <!--TODO: Move colors to global styles-->
+                                <Label FontSize="32" 
+                                       TextColor="#FFFFFF" 
+                                       Text="{Binding Task}"
+                                       FontFamily="{StaticResource NormalFont}"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" BackgroundColor="#143542" Opacity=".6"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <components:CrossPlatformFloatingActionButton x:Name="floatingActionButton" 
+                                                          HorizontalOptions="EndAndExpand" 
+                                                          WidthRequest="50" HeightRequest="50"  
+                                                          VerticalOptions="CenterAndExpand" 
+                                                          Image="add_24px.png"
+                                                          ButtonColor="#FFFFFF"
+                                                          Margin="10,10,25,35"
+                                                          Clicked="Handle_Clicked">
+                
+            </components:CrossPlatformFloatingActionButton>
+        </StackLayout>
+    </gradient:GradientHelper>  
 </ContentPage>

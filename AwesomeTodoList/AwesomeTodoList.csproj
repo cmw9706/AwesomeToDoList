@@ -14,5 +14,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Gradient\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Components\" />
+    <Folder Include="Images\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\add_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\add_24px.png" />
   </ItemGroup>
 </Project>

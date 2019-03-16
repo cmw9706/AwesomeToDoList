@@ -60,6 +60,8 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\GradientRendererDroid.cs" />
+    <Compile Include="Renderer\FloatingActionButtonRendererDroid.cs" />
+    <Compile Include="Renderer\LineSpacingLabelRendererDroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -83,6 +85,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\add_24px.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -97,6 +100,13 @@
       <Project>{765A51CB-3622-4952-B893-DF9F00082599}</Project>
       <Name>AwesomeTodoList</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\SairaCondensed-Black.ttf" />
+    <AndroidAsset Include="Assets\SairaCondensed-BlackItalic.ttf" />
+    <AndroidAsset Include="Assets\SairaCondensed-Bold.ttf" />
+    <AndroidAsset Include="Assets\SairaCondensed-Light.ttf" />
+    <AndroidAsset Include="Assets\FjallaOne-Regular.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

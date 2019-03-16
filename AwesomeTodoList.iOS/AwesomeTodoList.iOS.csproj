@@ -96,6 +96,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\GradientRendererIOS.cs" />
+    <Compile Include="Renderer\FloatingActionButtonRendererIOS.cs" />
+    <Compile Include="Renderer\LineSpacingLabelRendererIOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -160,5 +162,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add_24px.png" />
+    <BundleResource Include="Resources\SairaCondensed-Black.ttf" />
+    <BundleResource Include="Resources\SairaCondensed-BlackItalic.ttf" />
+    <BundleResource Include="Resources\SairaCondensed-Bold.ttf" />
+    <BundleResource Include="Resources\SairaCondensed-Light.ttf" />
+    <BundleResource Include="Resources\FjallaOne-Regular.ttf" />
   </ItemGroup>
 </Project>
