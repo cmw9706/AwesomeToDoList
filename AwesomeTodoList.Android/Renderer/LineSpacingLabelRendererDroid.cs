@@ -24,9 +24,10 @@ namespace AwesomeTodoList.Droid.Renderer
             {
                 this.LetterSpacingLabel = (LineSpacingLabel)this.Element;
             }
-
+ 
             var letterSpacing = this.LetterSpacingLabel.LetterSpacing;
-            this.Control.LetterSpacing = letterSpacing;
+            this.Control.LetterSpacing = (float)letterSpacing;
+
 
             this.UpdateLayout();
         }

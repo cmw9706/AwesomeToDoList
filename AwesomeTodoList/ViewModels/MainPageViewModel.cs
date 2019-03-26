@@ -45,20 +45,27 @@ namespace AwesomeTodoList.ViewModels
                 new TodoItem
                 {
                     Id = 1,
-                    Task = "It was a bright cold day in April, and the clocks were striking thirteen."
+                    Task = "Go milk the cow!"
                 },
                 new TodoItem
                 {
                     Id = 2,
-                    Task = "Someone must have slandered Josef K., for one morning, without having done anything truly wrong, he was arrested."
+                    Task = "Cover yourself in bologna"
                 },
                 new TodoItem
                 {
                     Id = 3,
-                    Task = "All this happened, more or less."
+                    Task = "Rethink your life choices"
                 },
             };
 
+        }
+
+        public void AddItem(string task) 
+        {
+            var newList = TodoItems;
+            newList.Add(new TodoItem { Id = TodoItems.Count + 1, Task = task });
+            TodoItems = newList;
         }
     }
 }

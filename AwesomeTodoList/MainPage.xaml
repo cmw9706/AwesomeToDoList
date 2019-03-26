@@ -5,10 +5,14 @@
              x:Class="AwesomeTodoList.MainPage"
              xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient"
              xmlns:components="clr-namespace:AwesomeTodoList.Components"
-             xmlns:resources="clr-namespace:AwesomeTodoList.Resources">
+             xmlns:resources="clr-namespace:AwesomeTodoList.Resources"
+             xmlns:subviews="clr-namespace:AwesomeTodoList.SubViews">
     <ContentPage.Resources>
         <resources:FontResources />
     </ContentPage.Resources>
+    <AbsoluteLayout>
+        
+    <StackLayout BackgroundColor="Transparent" x:Name="masterStack">
     <gradient:GradientHelper StartColor="#A30D00" 
                              EndColor="#F9A03F" 
                              HorizontalOptions="FillAndExpand" 
@@ -19,10 +23,23 @@
                    Margin="42,46,42,46"
                    FontSize="32"
                    TextColor="#FFFFFF" 
-                   LetterSpacing="2" FontFamily="{StaticResource HeaderFont}"/>
+                   LetterSpacing="1.5" 
+                   FontFamily="{StaticResource HeaderFont}">
+                        <components:LineSpacingLabel.LetterSpacing>
+                          <OnPlatform x:TypeArguments="x:Double">
+                             <On Platform="Android" Value=".3"/>
+                             <On Platform="iOS" Value="2"/>
+                            </OnPlatform>
+                        </components:LineSpacingLabel.LetterSpacing>
+
+                    </components:LineSpacingLabel>
+                    
             <ListView ItemsSource="{Binding TodoItems}" 
                       BackgroundColor="Transparent"
-                      SeparatorVisibility="None" HasUnevenRows="true">
+                      SeparatorVisibility="None" 
+                      HasUnevenRows="true"
+                      x:Name="list">
+                             
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -43,16 +60,35 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <components:CrossPlatformFloatingActionButton x:Name="floatingActionButton" 
-                                                          HorizontalOptions="EndAndExpand" 
-                                                          WidthRequest="50" HeightRequest="50"  
-                                                          VerticalOptions="CenterAndExpand" 
-                                                          Image="add_24px.png"
-                                                          ButtonColor="#FFFFFF"
-                                                          Margin="10,10,25,35"
-                                                          Clicked="Handle_Clicked">
-                
-            </components:CrossPlatformFloatingActionButton>
         </StackLayout>
     </gradient:GradientHelper>  
+        <AbsoluteLayout x:Name="addView" 
+                    AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="Fill" 
+                    Padding="0">
+                
+            <subviews:AddItemView   
+                    x:Name="addedSubView"
+                   AbsoluteLayout.LayoutBounds=".5,.5,0.75,0.75"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Margin="0,40,0,0" 
+                   VerticalOptions="Fill"
+                   HorizontalOptions="FillAndExpand"/>
+        </AbsoluteLayout>
+    </StackLayout>
+        
+        
+        <components:CrossPlatformFloatingActionButton x:Name="floatingActionButton" 
+                    AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    WidthRequest="50" 
+                    HeightRequest="50"  
+                    Image="add_24px.png"
+                    ButtonColor="#FFFFFF"
+                    Margin="10,10,25,45"
+                    Clicked="Handle_Clicked">
+                    
+        </components:CrossPlatformFloatingActionButton>
+    </AbsoluteLayout>
 </ContentPage>

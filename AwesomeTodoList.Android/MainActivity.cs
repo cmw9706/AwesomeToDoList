@@ -17,6 +17,9 @@ namespace AwesomeTodoList.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
+            //AndroidBug5497WorkaroundForXamarinAndroid.assistActivity(this);
+
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

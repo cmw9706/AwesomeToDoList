@@ -19,6 +19,7 @@
     <Folder Include="Components\" />
     <Folder Include="Images\" />
     <Folder Include="Resources\" />
+    <Folder Include="SubViews\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Images\add_24px.png" />
