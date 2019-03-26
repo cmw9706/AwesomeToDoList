@@ -39,6 +39,7 @@ namespace AwesomeTodoList.iOS.Renderer
             // set background
             Control.BackgroundColor = ((CrossPlatformFloatingActionButton)Element).ButtonColor.ToUIColor();
         }
+
         public override void Draw(CGRect rect)
         {
             base.Draw(rect);
@@ -49,8 +50,8 @@ namespace AwesomeTodoList.iOS.Renderer
             Layer.ShadowOpacity = 0.80f;
             Layer.ShadowPath = UIBezierPath.FromOval(Layer.Bounds).CGPath;
             Layer.MasksToBounds = false;
-
         }
+
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
