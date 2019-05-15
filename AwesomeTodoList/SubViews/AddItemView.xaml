@@ -14,6 +14,7 @@
                    FontSize="32" 
                    Margin="10,10,10,10" 
                    x:Name="addedTask"/>
+        <!--TODO: Move to button component-->
             <Frame CornerRadius="10" 
                    HorizontalOptions="FillAndExpand"
                    Margin="25,5,25,5">

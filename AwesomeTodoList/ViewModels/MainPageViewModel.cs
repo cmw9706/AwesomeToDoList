@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using AwesomeTodoList.Models;
 using Xamarin.Forms;
 
@@ -38,6 +39,8 @@ namespace AwesomeTodoList.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
 
+        public ICommand OnCompleteTask { get; set; }
+
         public MainPageViewModel()
         {
             TodoItems = new ObservableCollection<TodoItem>
@@ -59,6 +62,24 @@ namespace AwesomeTodoList.ViewModels
                 },
             };
 
+            OnCompleteTask = new Command((todoItem) => RemoveTask((TodoItem)todoItem));
+
+        }
+
+        private void RemoveTask(TodoItem todoItem)
+        {
+            Console.WriteLine($"Removing!{todoItem.Task}");
+            try
+            {
+                var newList = TodoItems;
+                newList.Remove(todoItem);
+                TodoItems = newList;
+            }
+            catch (Exception ex)
+            {
+                //TODO: Make errorhandler
+                throw ex;
+            }
         }
 
         public void AddItem(string task) 

@@ -6,7 +6,9 @@
              xmlns:gradient="clr-namespace:AwesomeTodoList.Gradient"
              xmlns:components="clr-namespace:AwesomeTodoList.Components"
              xmlns:resources="clr-namespace:AwesomeTodoList.Resources"
-             xmlns:subviews="clr-namespace:AwesomeTodoList.SubViews">
+             xmlns:subviews="clr-namespace:AwesomeTodoList.SubViews"
+             xmlns:contextMenu="clr-namespace:ContextMenu;assembly=ContextMenu"
+             x:Name="todoList">  
     <ContentPage.Resources>
         <resources:FontResources />
     </ContentPage.Resources>
@@ -42,21 +44,47 @@
                              
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" 
-                                         Margin="42,20,42,20"
-                                         HorizontalOptions="StartAndExpand">
-                                <Image />
-                                <!--TODO: Move colors to global styles-->
-                                <Label FontSize="32" 
-                                       TextColor="#FFFFFF" 
-                                       Text="{Binding Task}"
-                                       FontFamily="{StaticResource NormalFont}"/>
-                            </StackLayout>
-                            <BoxView HeightRequest="1" BackgroundColor="#143542" Opacity=".6"/>
-                            </StackLayout>
-                        </ViewCell>
+                        <contextMenu:SideActionBarCell>
+                            <contextMenu:SideActionBarCell.Content>
+                            <ContentView WidthRequest="{Binding Source={x:Reference list}, Path=Width}"
+                                                 x:Name="todoItem">
+                                    <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal" 
+                                                 Margin="42,20,42,20"
+                                                 HorizontalOptions="StartAndExpand">
+                                        <Image />
+                                        <!--TODO: Move colors to global styles-->
+                                        <Label FontSize="32" 
+                                               TextColor="#FFFFFF" 
+                                               Text="{Binding Task}"
+                                               FontFamily="{StaticResource NormalFont}"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="1" BackgroundColor="#143542" Opacity=".6"/>
+                                    </StackLayout>
+                            </ContentView>
+                            </contextMenu:SideActionBarCell.Content>
+                                    <contextMenu:SideActionBarCell.ContextTemplate>
+                                        <DataTemplate>
+                                            <StackLayout Orientation="Horizontal" WidthRequest="100"
+                                                          BindingContext="{Binding Source={x:Reference todoList}, Path=BindingContext}">
+                                            <Frame CornerRadius="10" 
+                                                   HorizontalOptions="FillAndExpand"
+                                                   Margin="2,2,2,2">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding OnCompleteTask}"
+                                                                          CommandParameter="{Binding Source={x:Reference todoItem}, Path=BindingContext}"/>
+                                                </Frame.GestureRecognizers>
+                                                    <Label Text="Done"
+                                                       FontFamily="{StaticResource NormalFont}"
+                                                       TextColor="#A20D01"
+                                                       FontSize="20"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       VerticalOptions="CenterAndExpand"/>
+                                            </Frame>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </contextMenu:SideActionBarCell.ContextTemplate>
+                        </contextMenu:SideActionBarCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

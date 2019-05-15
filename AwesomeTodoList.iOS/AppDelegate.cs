@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using ContextMenu.iOS;
 using Foundation;
 using UIKit;
 
@@ -22,6 +22,7 @@ namespace AwesomeTodoList.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            ContextMenuScrollViewRenderer.Initialize();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
