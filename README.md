@@ -9,3 +9,6 @@
 + Gradient Background
 + Floating Action Button
 + Line Spaced Label
+
+#### designed by: Gary Meyer (https://github.com/g4floyd)
+#### developed by: Connor Williams (https://github.com/cmw9706)
