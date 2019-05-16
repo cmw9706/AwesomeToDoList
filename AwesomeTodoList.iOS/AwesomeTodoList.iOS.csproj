@@ -52,6 +52,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>AwesomeToDoApp</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -107,34 +108,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
@@ -143,6 +123,21 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <InterfaceDefinition Include="AwesomeToDoSplash.storyboard" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Splash1x.png" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Splash2x.png" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Splash3x.png" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Splash2x-1.png" />
+    <ImageAsset Include="Assets.xcassets\Splashscreen.imageset\Splash1x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon160x160 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon87x687.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon3x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon2x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -162,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />
+    <Folder Include="Assets.xcassets\Splashscreen.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\add_24px.png" />

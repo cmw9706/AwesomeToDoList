@@ -22,7 +22,7 @@
                     <TapGestureRecognizer
                         Tapped="Handle_Tapped"/>
                 </Frame.GestureRecognizers>
-                    <Label Text="Done"
+                    <Label Text="Add"
                        FontFamily="{StaticResource NormalFont}"
                        TextColor="#A20D01"
                        FontSize="32"
